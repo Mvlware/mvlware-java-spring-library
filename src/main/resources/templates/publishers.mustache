@@ -1,0 +1,27 @@
+<html lang="en">
+<body>
+<div>Добавить издательство:</div>
+<form method="post">
+    <input type="text" name="name" placeholder="Имя" />
+    <br>
+    <input type="text" name="address" placeholder="Адрес" />
+    <br>
+    <button type="submit">Добавить</button>
+</form>
+<div>Введите имя для поиска:</div>
+<!--action добавляется т.к для form...method="post" уже используется PostMapping из GreetingController - может выдать ошибку-->
+<form method="post" action="filter">
+    <input type="text" name="filter" placeholder="Имя для поиска">
+    <button type="submit">Найти</button>
+</form>
+<div>Список издательств:</div>
+{{#publishers}}
+<div>
+    <b>{{id}}</b>
+    <span>{{name}}</span>
+    <span>{{address}}</span>
+</div>
+{{/publishers}}
+</body>
+</html>
+
